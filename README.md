@@ -1,6 +1,6 @@
 # Los Angeles County Fires: Vegetation Health and EJI
 
-This repository contains analyses exploring the Eaton and Palisades Fires that took place in Los Angeles County during January 2025. Using Python, I highlight the vegetation damage through false color imagery (Part 1) and explore internet availability of census blocks affected by the fires (Part 2).
+This repository contains analyses exploring the Eaton and Palisades Fires that took place in Los Angeles County during January 2025. Using Python, I highlight the vegetation damage through false color imagery (notebook: false_color_imagery.ipynb) and explore internet availability of census blocks affected by the fires (notebook: fire_eji.ipynb).
 
 These tasks were completed as part of my [MEDS](https://bren.ucsb.edu/masters-programs/master-environmental-data-science) coursework for [EDS220](https://meds-eds-220.github.io/MEDS-eds-220-course/). Part 1 was adapted from [Homework Assignment 4](https://meds-eds-220.github.io/MEDS-eds-220-course/assignments/assignment4-palisades-eaton-fires.html) and Part 2 a [discussion section activity](https://meds-eds-220.github.io/MEDS-eds-220-course/discussion-sections/ds8-eji-eaton-palisades.html). I compiled these notebooks in a single repository not only because they correspond to the same subject area, but also because they are both included in a single [blog post](https://sofiasarak.github.io/blog/la-fire-analysis/) on my personal website. Storing them in one place felt like a good choice for ease of accessibility!
 
@@ -8,7 +8,15 @@ These tasks were completed as part of my [MEDS](https://bren.ucsb.edu/masters-pr
 
 The Eaton and Palisades fires occurred nearly simultaneously, inflicting both ecological and infrastructural damage on Los Angeles. Together, they destroyed more than 16,000 structures and displaced thousands of households. Understanding the specifics of the impact – such as which populations were most affected as well as the extent of vegetation damage – is vital for recovery efforts, as well as informing future fire safety and policy.
 
-We overlay the fire perimeters onto to remote sensing and Environmental Justice Index (EJI) data to explore the patterns within in. First, by using remote sensing data and assigning infrared bands to visible colors, we are able to highlight vegetation health, burn severity, and the extent of fire scars remnant after the fire. Second, clipping EJI census block data to the fire perimeters gives us a summary of the internet availability in each area. Internet availability is an important aspect of fire safety response as communities that lack availability to natural disaster information have less time to respond.
+In this repository, fire perimeters are overlayed with remote sensing and Environmental Justice Index (EJI) data to explore the patterns within in. 
+
+`false_color_imagery.ipynb`:
+
+By using remote sensing data and assigning infrared bands to visible colors, we are able to highlight vegetation health, burn severity, and the extent of fire scars remnant after the fire. 
+
+`fire_eji.ipynb`:
+
+Clipping EJI census block data to the fire perimeters gives us a summary of the internet availability in each area. Internet availability is an important aspect of fire safety response as communities that lack availability to natural disaster information have less time to respond.
 
 ## Data Sources
 
@@ -28,6 +36,19 @@ EJI aims to summarize the cumulative impacts of environmental injustice by censu
 
 ## Repository Structure
 
+```
+├── data
+│   ├── EJI_2024_California
+│   │   ├── EJI_2024_California.gdb
+│   │   ├── EJI_DATADICTIONARY_2024.csv
+│   │   └── EJI_DATADICTIONARY_2024.xlsx
+│   ├── landsat8-2025-02-23-palisades-eaton.nc
+│   ├── Eaton_Perimeter_20250121
+│   └── Palisades_Perimeter_20250121
+├── false_color_imagery.ipynb
+├── fire_eji.ipynb
+└── README.md
+```
 
 ## References
 
@@ -48,4 +69,4 @@ Phillips, S. (2025, February). The Palisades and Eaton Fires: Neighborhood Data 
 - [True Color Imagery (NOAA)](https://coastwatch.noaa.gov/cwn/product-families/true-color-imagery.html)
 
 
-*As mentioned above, this repository was created for the purposes of the EDS220 curriculum. Credit must be given to [Carmen Galaz García](https://github.com/carmengg) (Instructor) and [Annie Adams](https://github.com/annieradams), who helped me develop my workflow!*
+*As mentioned above, this repository was created for the purposes of the EDS220 curriculum. Credit must be given to [Carmen Galaz García](https://github.com/carmengg) (Instructor) and [Annie Adams](https://github.com/annieradams) (Co-Instructor), who helped me develop my workflow!*
